@@ -22,3 +22,8 @@ If I want to keep up, I have to learn all of these.
 2. Apply what I learn to create a simple API at the very minimum.
 
 ## Progress
+[x] Learn basic syntax for functions, lists, types, and typeclasses.
+[x] Create basic CLI app.
+[ ] Learn about monads
+[ ] Using Haskell tools (haskell-stack?)
+[ ] Create an API
