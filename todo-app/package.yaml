@@ -19,9 +19,16 @@ extra-source-files:
 description:         Please see the README on GitHub at <https://github.com/emmandev/todo-app#readme>
 
 dependencies:
-- base >= 4.7 && < 5
+- base >= 4.13 && < 5
 - aeson
+- bytestring
+- monad-logger
+- mtl
+- persistent
+- persistent-postgresql
+- persistent-template
 - servant-server
+- text
 - wai
 - warp
 

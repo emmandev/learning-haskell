@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 0f87e27d60db53c360613bc47af6bce37862335bfe66a5b0ed02d48d1cf05eeb
+-- hash: d37fd915265ab5943e2d08ad282a4e5647cbc6f9d52be02b9ed11a404f337e3c
 
 name:           todo-app
 version:        0.1.0.0
@@ -26,7 +26,9 @@ source-repository head
 
 library
   exposed-modules:
-      Routes
+      Api
+      Database
+      Schema
       Server
       Todo
   other-modules:
@@ -35,8 +37,15 @@ library
       src
   build-depends:
       aeson
-    , base >=4.7 && <5
+    , base >=4.13 && <5
+    , bytestring
+    , monad-logger
+    , mtl
+    , persistent
+    , persistent-postgresql
+    , persistent-template
     , servant-server
+    , text
     , wai
     , warp
   default-language: Haskell2010
@@ -51,7 +60,14 @@ executable todo-app-exe
   build-depends:
       aeson
     , base
+    , bytestring
+    , monad-logger
+    , mtl
+    , persistent
+    , persistent-postgresql
+    , persistent-template
     , servant-server
+    , text
     , todo-app
     , wai
     , warp
@@ -68,10 +84,17 @@ test-suite todo-app-test
   build-depends:
       aeson
     , base
+    , bytestring
     , hspec
     , hspec-wai
     , hspec-wai-json
+    , monad-logger
+    , mtl
+    , persistent
+    , persistent-postgresql
+    , persistent-template
     , servant-server
+    , text
     , todo-app
     , wai
     , warp
