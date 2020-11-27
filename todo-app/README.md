@@ -20,17 +20,17 @@ Then `cd` into this current directory and build:
 
 # Todo List (so meta)
 
-- [ ] Learn to use Stack or Cabal
-    - [ ] Adding dependencies
+- [x] Learn to use Stack or Cabal
+    - [x] Adding dependencies
     - [ ] What packages are stable and in active maintenance
-- [ ] Add a local server
+- [x] Add a local server
 - [ ] Add Endpoints
     - [ ] Fetching a todo with an ID
     - [ ] Fetching all todos
     - [ ] Creating a todo
     - [ ] Deleting a todo
     - [ ] Updating a todo
-- [ ] Add a database
+- [x] Add a database
 - [ ] Writeup
 
 Extras:
