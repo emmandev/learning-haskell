@@ -1,0 +1,78 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 0f87e27d60db53c360613bc47af6bce37862335bfe66a5b0ed02d48d1cf05eeb
+
+name:           todo-app
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/emmandev/todo-app#readme>
+homepage:       https://github.com/emmandev/todo-app#readme
+bug-reports:    https://github.com/emmandev/todo-app/issues
+author:         Emmanuel Tierra
+maintainer:     emmantierra.dev@gmail.com
+copyright:      2020 Emmanuel Tierra
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/emmandev/todo-app
+
+library
+  exposed-modules:
+      Routes
+      Server
+      Todo
+  other-modules:
+      Paths_todo_app
+  hs-source-dirs:
+      src
+  build-depends:
+      aeson
+    , base >=4.7 && <5
+    , servant-server
+    , wai
+    , warp
+  default-language: Haskell2010
+
+executable todo-app-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_todo_app
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      aeson
+    , base
+    , servant-server
+    , todo-app
+    , wai
+    , warp
+  default-language: Haskell2010
+
+test-suite todo-app-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_todo_app
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      aeson
+    , base
+    , hspec
+    , hspec-wai
+    , hspec-wai-json
+    , servant-server
+    , todo-app
+    , wai
+    , warp
+  default-language: Haskell2010
