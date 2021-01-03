@@ -44,7 +44,9 @@ Also, one good thing about Stack is that it also works with Cabal files.
 # Resources
  
 - [Servant docs](https://docs.servant.dev/en/stable/tutorial/index.html)
-- 
+- [parsonsmatt/servant-persistent](https://github.com/parsonsmatt/servant-persistent)
+- [haskell-servant/example-servant-persistent](https://github.com/haskell-servant/example-servant-persistent)
+- [jkachmar/servant-persistent-realworld](https://github.com/jkachmar/servant-persistent-realworld)
 
 # Todo List (so meta)
 
