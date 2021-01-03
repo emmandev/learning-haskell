@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: d37fd915265ab5943e2d08ad282a4e5647cbc6f9d52be02b9ed11a404f337e3c
+-- hash: c79d848fb25d17f582b8ff0fc8c55b1a9687885ce54896398d42391f82aa5f7d
 
 name:           todo-app
 version:        0.1.0.0
@@ -46,6 +46,7 @@ library
     , persistent-template
     , servant-server
     , text
+    , transformers
     , wai
     , warp
   default-language: Haskell2010
@@ -69,6 +70,7 @@ executable todo-app-exe
     , servant-server
     , text
     , todo-app
+    , transformers
     , wai
     , warp
   default-language: Haskell2010
@@ -96,6 +98,7 @@ test-suite todo-app-test
     , servant-server
     , text
     , todo-app
+    , transformers
     , wai
     , warp
   default-language: Haskell2010
