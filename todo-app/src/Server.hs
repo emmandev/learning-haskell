@@ -5,15 +5,13 @@ import Network.Wai.Handler.Warp
 import Servant
 
 import Api
+import Database (connectionString)
 import Todo 
 
 startApp :: IO ()
 startApp = run 8080 app
 
 app :: Application
-app = serve api handlers
-
-api :: Proxy Routes
-api = Proxy
+app = serve todoApi (todoServer connectionString)
 
 
