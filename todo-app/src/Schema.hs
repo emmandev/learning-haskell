@@ -10,15 +10,38 @@
 {-# LANGUAGE DerivingStrategies         #-}
 {-# LANGUAGE StandaloneDeriving         #-}
 {-# LANGUAGE UndecidableInstances       #-}
+
 module Schema where
 
-import           Database.Persist (Entity(..), Entity)
+import Data.Aeson
+import Data.Aeson.Types
+import Data.Text (Text)
+import Database.Persist (Entity(..), Entity)
 import qualified Database.Persist.TH as PTH
-import           Data.Text (Text)
 
 PTH.share [PTH.mkPersist PTH.sqlSettings, PTH.mkMigrate "migrateAll"] [PTH.persistLowerCase|
   Todo sql=todos
-    todo Text
+    description Text
     completed Bool
     deriving Show Read
 |]
+
+instance ToJSON Todo where 
+  toJSON todo = object
+    [
+      "description" .= todoDescription todo,
+      "completed" .= todoCompleted todo
+    ]
+
+instance FromJSON Todo where
+  parseJSON = withObject "Todo" parseTodo
+
+parseTodo :: Object -> Parser Todo
+parseTodo object = do
+  description <- object .: "description"
+  completed <- object .: "completed"
+  return Todo
+    {
+      todoDescription = description,
+        todoCompleted = completed
+    }
